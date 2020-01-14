@@ -14,10 +14,9 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build with dotnet
-      run: dotnet build
+      run: dotnet build --framework netcoreapp2.0
     - name: Scope for .NET
       uses: undefinedlabs/scope-for-dotnet-action@v1
       with:
-        dsn: ${{secrets.SCOPE_DSN}} # required
-        use-solutions: true  # optional - default is 'true'
-        command: dotnet test # optional - default is 'dotnet test'
+        dsn: ${{secrets.SCOPE_DSN}}
+        command: dotnet test --framework netcoreapp2.0
