@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
+    - name: Build
+      run: dotnet build -p ./test/Twilio.Test/Twilio.Test.csproj -f netcoreapp2.0
     - name: Scope for .NET
       uses: undefinedlabs/scope-for-dotnet-action@v1
       with:
