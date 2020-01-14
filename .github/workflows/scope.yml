@@ -1,0 +1,23 @@
+name: Scope
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build with dotnet
+      run: dotnet build
+    - name: Scope for .NET
+      uses: undefinedlabs/scope-for-dotnet-action@v1
+      with:
+        dsn: ${{secrets.SCOPE_DSN}} # required
+        use-solutions: true  # optional - default is 'true'
+        command: dotnet test # optional - default is 'dotnet test'
