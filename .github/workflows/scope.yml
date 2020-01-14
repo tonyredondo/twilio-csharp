@@ -20,3 +20,6 @@ jobs:
       with:
         dsn: ${{secrets.SCOPE_DSN}}
         command: dotnet run -p ./test/Twilio.Test/Twilio.Test.csproj -f netcoreapp2.0 --debug
+      env:
+        SCOPE_CODE_PATH: True
+        SCOPE_INSTRUMENTATION_HTTP_PAYLOAD: True
