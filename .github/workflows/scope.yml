@@ -13,17 +13,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-<<<<<<< HEAD
-=======
-    - name: Build with dotnet
-      run: dotnet build
->>>>>>> 30ebd69ae94a8d7a07ce275c5bebddb4954601da
     - name: Scope for .NET
       uses: undefinedlabs/scope-for-dotnet-action@v1
       with:
         dsn: ${{secrets.SCOPE_DSN}}
-<<<<<<< HEAD
         command: dotnet run -p ./test/Twilio.Test/Twilio.Test.csproj -f netcoreapp2.0
-=======
-        command: dotnet test
->>>>>>> 30ebd69ae94a8d7a07ce275c5bebddb4954601da
