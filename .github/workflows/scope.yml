@@ -19,4 +19,4 @@ jobs:
       uses: undefinedlabs/scope-for-dotnet-action@v1
       with:
         dsn: ${{secrets.SCOPE_DSN}}
-        command: dotnet run -p ./test/Twilio.Test/Twilio.Test.csproj -f netcoreapp2.0
+        command: dotnet run -p ./test/Twilio.Test/Twilio.Test.csproj -f netcoreapp2.0 --debug
