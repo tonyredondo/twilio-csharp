@@ -15,13 +15,11 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build
       run: dotnet build
-    - name: Change Working Directory
-      run: cd ./test/Twilio.Test/
     - name: Scope for .NET
       uses: undefinedlabs/scope-for-dotnet-action@v1
       with:
         dsn: ${{secrets.SCOPE_DSN}}
-        command: dotnet run -f netcoreapp2.1 --debug
+        command: cd ./test/Twilio.Test/ && dotnet run -f netcoreapp2.1 --debug
       env:
         SCOPE_CODE_PATH: True
         SCOPE_INSTRUMENTATION_HTTP_PAYLOAD: True
